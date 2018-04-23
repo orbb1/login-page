@@ -64,7 +64,10 @@ class LoginPage extends Component {
     return (
       <div className="LoginPage-wpapper">
         Hello login page!
-        <LoginForm onChange={(e) => this.onChange(e)} onLogin={this.onLogin.bind(this)} user={this.state} />
+        {this.state.message.isError && <p>{this.state.message.text}</p>}
+        {this.state.loggedIn
+          ? <p>Congrats!</p>
+          : <LoginForm onChange={(e) => this.onChange(e)} onLogin={this.onLogin.bind(this)} user={this.state} />}
       </div>
     );
   }
