@@ -2,38 +2,29 @@ import React, { Component } from 'react';
 import { FormInput } from '../FormInput/';
 
 class LoginForm extends Component {
-  constructor() {
-    super();
-    this.state = {
-      formFields: [
-        {
-          type: 'text',
-          name: 'email',
-          label: 'Email',
-          order: 1
-        }, {
-          type: 'password',
-          name: 'password',
-          label: 'Password',
-          order: 2
-        }, {
-          type: 'checkbox',
-          name: 'remember',
-          label: 'Remember me',
-          order: 3
-        }
-      ]
-    }
+  constructor(props) {
+    super(props);
   }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.onLogin();
+  };
+  
+  handleChange(e) {
+    this.props.onChange(e);
+  }
+
   render() {
     return (
       <div className="LoginForm">
         <p>Hello login form!</p>
-        <form>
+        <form onSubmit={this.handleSubmit.bind(this)} noValidate>
           <fieldset>
-            {this.state.formFields.map(
-              f => <FormInput key={f.order} type={f.type} name={f.name} label={f.label}/>
-              )}
+            <legend>Log in</legend>
+            <FormInput type={'email'} name={'email'} label={'Email:'} handleChange={this.handleChange.bind(this)} value={this.props.user.email}/>
+            <FormInput type={'password'} name={'password'} label={'Password:'} handleChange={this.handleChange.bind(this)} value={this.props.user.password}/>
+            <FormInput type={'checkbox'} name={'remember'} label={'Remember me:'} handleChange={this.handleChange.bind(this)} value={this.props.user.remember}/>
             <input type="submit" value="Login" />
           </fieldset>
         </form>
