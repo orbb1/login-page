@@ -23,8 +23,11 @@ class LoginPage extends Component {
     const { EMAIL_PATTERN, PASSWORD_PATTERN, USER_EMAL_PATTERN, USER_PASSWORD_PATTERN } = patterns;
     const goodEmail = userData.email.match(EMAIL_PATTERN);
     const goodPassword = userData.password.match(PASSWORD_PATTERN);
-    const goodData = userData.email.toLowerCase().match(USER_EMAL_PATTERN) && userData.password.match(USER_PASSWORD_PATTERN);
-    const isloggedIn = (!(!goodEmail && this.throWError(EMAIL_ERROR)) && !(!goodPassword && this.throWError(PASSWORD_ERROR))) && !(!goodData && this.throWError(USER_ERROR));
+    const goodData = userData.email.toLowerCase().match(USER_EMAL_PATTERN) 
+                      && userData.password.match(USER_PASSWORD_PATTERN);
+    const isloggedIn = (!(!goodEmail && this.throWError(EMAIL_ERROR)) 
+                        && !(!goodPassword && this.throWError(PASSWORD_ERROR))) 
+                        && !(!goodData && this.throWError(USER_ERROR));
     
     this.setState({loggedIn: isloggedIn});
     
