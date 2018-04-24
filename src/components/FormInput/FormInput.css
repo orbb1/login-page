@@ -1,0 +1,42 @@
+.FormInput-group {
+    margin: 1em 0;
+}
+
+.FormInput-label, .FormInput-input {
+    margin: .25em 0;
+}
+
+.FormInput-label {
+    font-size: 1.25em;
+}
+
+.FormInput-input {
+    display: block;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    padding: .5em 0;
+    box-sizing: border-box;
+    height: 2em;
+    transition: border-width 300ms;
+}
+
+.FormInput-input:focus {
+    outline: none;
+    border-bottom: 4px solid #fff;
+}
+
+.LoginForm-submit {
+    background-color: #fff;
+    color: lightslategrey;
+    font-weight: bold;
+    font-size: 1.25em;
+    padding: .5em 1em;
+    box-shadow: 2px 2px 2px #ccc;
+    border: none;
+}
+
+.LoginForm-submit:focus {
+    outline: none;
+}

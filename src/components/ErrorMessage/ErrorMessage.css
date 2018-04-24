@@ -1,0 +1,21 @@
+.ErrorMessage-wrapper {
+    padding: .5em;
+    -webkit-animation: opac 500ms;
+       -moz-animation: opac 500ms;
+         -o-animation: opac 500ms;
+            animation: opac 500ms;
+}
+
+.ErrorMessage-paragraph {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: #ffafbf;
+    margin: 0;
+    
+}
+
+@keyframes opac {
+    0% { opacity: 0; height: 0 }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; height: 1.5em }
+}

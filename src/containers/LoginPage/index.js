@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import LoginForm from '../../conponents/LoginForm/';
+import LoginForm from '../../components/LoginForm/';
+import { ErrorMessage } from '../../components/ErrorMessage/';
 import { errors, patterns } from '../../shared/const';
+import './LoginPage.css';
 
 class LoginPage extends Component {
   constructor() {
@@ -62,11 +64,10 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div className="LoginPage-wpapper">
-        Hello login page!
-        {this.state.message.isError && <p>{this.state.message.text}</p>}
+      <div className={`LoginPage-wpapper ${this.state.message.isError ? `is-error` : ``}`}>
+        {this.state.message.isError && <ErrorMessage message={this.state.message.text} />}
         {this.state.loggedIn
-          ? <p>Congrats!</p>
+          ? <p>Congrats, {this.state.email}!</p>
           : <LoginForm onChange={(e) => this.onChange(e)} onLogin={this.onLogin.bind(this)} user={this.state} />}
       </div>
     );
