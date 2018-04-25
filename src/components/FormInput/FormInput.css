@@ -19,12 +19,12 @@
     padding: .5em 0;
     box-sizing: border-box;
     height: 2em;
-    transition: border-width 300ms;
+    transition: border-color 300ms;
 }
 
 .FormInput-input:focus {
     outline: none;
-    border-bottom: 4px solid #fff;
+    border-bottom: 2px solid #bbdb1a;
 }
 
 .LoginForm-submit {
